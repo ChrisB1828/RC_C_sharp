@@ -12,18 +12,14 @@ namespace Day3_MD
         static void Ievade ()
         {
             int i = 1;
-            int lielākais = 0;
-            int mazākais = 0;
+            int lielākais = Int32.MinValue; //vai šo saīsinājumu MD ietvaros drīkst izmantot, lai nebūtu int max un min vērtība jāraksta ar skaitļiem?
+            int mazākais = Int32.MaxValue;
 
             while (i > 0)
             {
-                String stop = "";
 
-                for (int j = 1; j > 0;)
-                {
-                    Console.WriteLine("Ievadiet skaitli! Ja ievadīsiet STOP, skaitļu ievade tiks pārtraukta.");
-                    stop = Console.ReadLine();
-                }
+                Console.WriteLine("Ievadiet skaitli! Ja ievadīsiet STOP, skaitļu ievade tiks pārtraukta.");
+                string stop = Console.ReadLine();
                  
                 if (stop == "STOP")
                 {
@@ -31,8 +27,8 @@ namespace Day3_MD
                 }
 
                 int sk = Convert.ToInt32(stop);
-
-                if (sk < mazākais)
+                
+                if (sk <= mazākais)
                 {
                     mazākais = sk;
                 }
