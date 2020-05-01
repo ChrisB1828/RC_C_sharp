@@ -8,9 +8,94 @@ namespace Day5_arrays
         {
             //ArraySample();
             //Task1();
-            Task2();
+            //Task2();
+            Task3();
+            //Task4();
         }
 
+        static void Task4()
+        {
+            int[] a = { 1, 6, 8, 9, 12 };
+
+
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine("Ievadiet kādu no šiem skaitļiem lai iegūtu indeksu: 1, 6, 8, 9 vai 12");
+                int sk = Convert.ToInt32(Console.ReadLine());
+
+                if (sk == a[0])
+                {
+                    Console.WriteLine("0");
+                }
+                else if (sk == a[1])
+                {
+                    Console.WriteLine("1");
+                }
+                else if (sk == a[2])
+                {
+                    Console.WriteLine("2");
+                }
+                else if (sk == a[3])
+                {
+                    Console.WriteLine("3");
+                }
+                else if (sk == a[4])
+                {
+                    Console.WriteLine("4");
+                }
+            } 
+
+        }
+
+        static void Task3()
+        {
+            int[] a = new int[5];
+            Console.WriteLine("Random skaitļi:");
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] = RandomNumber();
+                Console.WriteLine(a[i]);
+                
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine("Ievadiet kādu no šiem skaitļiem, lai iegūtu indeksu");
+                int sk = Convert.ToInt32(Console.ReadLine());
+
+                if (sk == a[0])
+                {
+                    Console.WriteLine("0");
+                }
+                else if (sk == a[1])
+                {
+                    Console.WriteLine("1");
+                }
+                else if (sk == a[2])
+                {
+                    Console.WriteLine("2");
+                }
+                else if (sk == a[3])
+                {
+                    Console.WriteLine("3");
+                }
+                else if (sk == a[4])
+                {
+                    Console.WriteLine("4");
+                }
+            }
+
+
+        }
+
+        static int RandomNumber(int min = 1, int max = 11)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
         static void Task2()
         {
             int[] a = { 1, 6, 7, 12, 14, 9 };
@@ -29,7 +114,7 @@ namespace Day5_arrays
         static void Task1()
         {
             int[] a = new int[5];
-            int sum = 0;
+            double sum = 0;
 
             for (int i = 0; i < a.Length; i++)
             {
@@ -42,6 +127,7 @@ namespace Day5_arrays
                 sum = sum + a[i];
             }
             Console.WriteLine("Summa: " + sum);
+            Console.WriteLine("Vidējā vērtība ir " + (sum /= a.Length));
         }
 
         static void ArraySample()
