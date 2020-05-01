@@ -9,41 +9,25 @@ namespace Day5_arrays
             //ArraySample();
             //Task1();
             //Task2();
-            Task3();
-            //Task4();
+            //Task3();
+            Task4();
         }
 
         static void Task4()
         {
             int[] a = { 1, 6, 8, 9, 12 };
 
-
+            Console.WriteLine("Ievadiet kādu no šiem skaitļiem lai iegūtu indeksu: 1, 6, 8, 9 vai 12");
+            int sk = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 0; i < a.Length; i++)
             {
-                Console.WriteLine("Ievadiet kādu no šiem skaitļiem lai iegūtu indeksu: 1, 6, 8, 9 vai 12");
-                int sk = Convert.ToInt32(Console.ReadLine());
+                
+                if (sk == a[i])
+                {
+                    Console.WriteLine(i);
+                }
 
-                if (sk == a[0])
-                {
-                    Console.WriteLine("0");
-                }
-                else if (sk == a[1])
-                {
-                    Console.WriteLine("1");
-                }
-                else if (sk == a[2])
-                {
-                    Console.WriteLine("2");
-                }
-                else if (sk == a[3])
-                {
-                    Console.WriteLine("3");
-                }
-                else if (sk == a[4])
-                {
-                    Console.WriteLine("4");
-                }
             } 
 
         }
@@ -61,31 +45,19 @@ namespace Day5_arrays
             }
             Console.WriteLine();
 
+            Console.WriteLine("Ievadiet kādu no šiem skaitļiem, lai iegūtu indeksu");
+            int sk = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Indeksi: ");
+
             for (int i = 0; i < a.Length; i++)
             {
-                Console.WriteLine("Ievadiet kādu no šiem skaitļiem, lai iegūtu indeksu");
-                int sk = Convert.ToInt32(Console.ReadLine());
 
-                if (sk == a[0])
+                if (sk == a[i])
                 {
-                    Console.WriteLine("0");
+                    Console.Write(i + "");
                 }
-                else if (sk == a[1])
-                {
-                    Console.WriteLine("1");
-                }
-                else if (sk == a[2])
-                {
-                    Console.WriteLine("2");
-                }
-                else if (sk == a[3])
-                {
-                    Console.WriteLine("3");
-                }
-                else if (sk == a[4])
-                {
-                    Console.WriteLine("4");
-                }
+
             }
 
 
