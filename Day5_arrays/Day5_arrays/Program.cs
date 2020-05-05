@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Day5_arrays
 {
@@ -10,7 +11,7 @@ namespace Day5_arrays
             //Task1();
             //Task2();
             //Task3();
-            Task4();
+            Task4(); // ar Extra uzdevumu
         }
 
         static void Task4()
@@ -20,16 +21,21 @@ namespace Day5_arrays
             Console.WriteLine("Ievadiet kādu no šiem skaitļiem lai iegūtu indeksu: 1, 6, 8, 9 vai 12");
             int sk = Convert.ToInt32(Console.ReadLine());
 
+            if (!a.Contains(sk)) //Extra uzdevums
+            {
+                Console.WriteLine("Ievadīts nepareizs skaitlis!");
+            }
+
             for (int i = 0; i < a.Length; i++)
             {
-                
+
                 if (sk == a[i])
                 {
                     Console.WriteLine(i);
                 }
-
-            } 
-
+                
+            }
+  
         }
 
         static void Task3()
