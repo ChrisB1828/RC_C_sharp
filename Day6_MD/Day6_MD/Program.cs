@@ -6,10 +6,10 @@ namespace Day6_MD
     {
         static void Main(string[] args)
         {
-            Calculator();
+            CalculatorIevadeIzvade();
         }
                 
-        static void Calculator()
+        static void CalculatorIevadeIzvade()
         {
             Console.WriteLine("Ja vēlies saskaitīt divus skaitļus tad nospied - 1");
             Console.WriteLine("Ja vēlies atņemt divus skaiļus - 2");
@@ -25,34 +25,83 @@ namespace Day6_MD
 
             izvele = izvele.ToLower();
 
-            
+
+
             if (izvele == "stop")
             {
                 Console.WriteLine("Paldies par uzmanību!");
             }
             else if (izvele == "1")
             {
+                Console.WriteLine("Ievadiet pirmo skaitli!");
+                int sk1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet otro skaitli!");
+                int sk2 = Convert.ToInt32(Console.ReadLine());
 
+                Console.WriteLine("Ievadīto skaitļu summa ir " + Calculator.Addition(sk1, sk2));
+                Console.WriteLine();
+
+                CalculatorIevadeIzvade();
             }
             else if (izvele == "2")
             {
+                Console.WriteLine("Ievadiet pirmo skaitli!");
+                int sk1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet otro skaitli!");
+                int sk2 = Convert.ToInt32(Console.ReadLine());
 
+                Console.WriteLine("Ievadīto skaitļu rezultāts ir " + Calculator.Subtraction(sk1, sk2));
+                Console.WriteLine();
+
+                CalculatorIevadeIzvade();
             }
             else if (izvele == "3")
             {
+                Console.WriteLine("Ievadiet pirmo skaitli!");
+                int sk1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet otro skaitli!");
+                int sk2 = Convert.ToInt32(Console.ReadLine());
 
+                Console.WriteLine("Ievadīto skaitļu rezultāts ir " + Calculator.Multiplication(sk1, sk2));
+                Console.WriteLine();
+
+                CalculatorIevadeIzvade();
             }
             else if (izvele == "4")
             {
+                Console.WriteLine("Ievadiet pirmo skaitli!");
+                int sk1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet otro skaitli!");
+                int sk2 = Convert.ToInt32(Console.ReadLine());
 
+                Console.WriteLine("Ievadīto skaitļu rezultāts ir " + Calculator.Division(sk1, sk2));
+                Console.WriteLine();
+
+                CalculatorIevadeIzvade();
             }
             else if (izvele == "5")
             {
+                Console.WriteLine("Ievadiet pirmo skaitli!");
+                int sk1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet otro skaitli!");
+                int sk2 = Convert.ToInt32(Console.ReadLine());
 
+                Console.WriteLine("Ievadīto skaitļu rezultāts ir " + Calculator.Reminder(sk1, sk2));
+                Console.WriteLine();
+
+                CalculatorIevadeIzvade();
             }
             else if (izvele == "6")
             {
+                Console.WriteLine("Ievadiet pirmo skaitli!");
+                int sk1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet otro skaitli!");
+                int sk2 = Convert.ToInt32(Console.ReadLine());
 
+                Console.WriteLine("Ievadīto skaitļu rezultāts ir " + Calculator.Pakape(sk1, sk2));
+                Console.WriteLine();
+
+                CalculatorIevadeIzvade();
             }
             else
             {
@@ -60,7 +109,7 @@ namespace Day6_MD
                 Console.WriteLine("Ievadiet savu izvēli atkārtoti!");
                 Console.WriteLine();
 
-                Calculator();
+                CalculatorIevadeIzvade();
             }
 
         }

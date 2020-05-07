@@ -38,5 +38,13 @@ namespace Day6_MD
             return reminder;
         }
 
+        public static int Pakape(int a, int b)
+        {
+            double pakape = Math.Pow(a, b);
+            int result = Convert.ToInt32(pakape);
+
+            return result;
+            
+        }
     }
 }
