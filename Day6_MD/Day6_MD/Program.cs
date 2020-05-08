@@ -71,11 +71,9 @@ namespace Day6_MD
             Console.WriteLine();
 
             string izvele = Console.ReadLine();
-            Console.WriteLine();
-
             izvele = izvele.ToLower();
 
-
+            Console.WriteLine();
 
             if (izvele == "stop")
             {
