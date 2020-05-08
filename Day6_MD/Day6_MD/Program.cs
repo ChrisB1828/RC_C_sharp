@@ -6,9 +6,59 @@ namespace Day6_MD
     {
         static void Main(string[] args)
         {
-            CalculatorIevadeIzvade();
+            StudentsId();
+            //CalculatorIevadeIzvade();
         }
-                
+
+        static void StudentsId()
+        {
+            Console.WriteLine("Ievadiet vārdu!");
+            string vardsIevade = Console.ReadLine();
+
+            Console.WriteLine("Ievadiet uzvārdu!");
+            string uzvardsIevade = Console.ReadLine();
+
+            Console.WriteLine("Ievadiet kursu kurā šobrīd studējiet, ievadot skaitlisku vērtību!");
+            string kurssStringIevade = Console.ReadLine();
+
+            Console.WriteLine();
+
+            int kurssIevade = 0;
+
+            try
+            {
+                kurssIevade = Convert.ToInt32(kurssStringIevade);
+
+                if (kurssIevade != 1 && kurssIevade != 2 && kurssIevade != 3)
+                {
+                    
+                    Console.WriteLine("Ievadīts nepareizs kursa numurs. Atgādinām, ka kursa numuram ir jābūt skaitlim no 1 līdz 3!");
+                    Console.WriteLine("Lūdzam atkārtoti ievadīt informāciju par sevi!");
+                    Console.WriteLine();
+                    StudentsId();
+                }
+                else
+                {
+                    Students.setVards(vardsIevade);
+                    Students.setUzvards(uzvardsIevade);
+                    Students.setKurss(kurssIevade);
+
+                    Students.Print();
+                }
+
+            }
+            catch (Exception)
+            {
+
+                    Console.WriteLine("Ievadītā vērtība nav skaitliska. Atgādinām, ka kursa numuram ir jābūt skaitlim no 1 līdz 3!");
+                    Console.WriteLine("Lūdzam atkārtoti ievadīt informāciju par sevi!");
+                    Console.WriteLine();
+                    StudentsId();
+
+            }
+        }
+
+
         static void CalculatorIevadeIzvade()
         {
             Console.WriteLine("Ja vēlies saskaitīt divus skaitļus tad nospied - 1");
