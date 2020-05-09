@@ -9,8 +9,50 @@ namespace Day7_Object
     {
         static void Main(string[] args)
         {
-            Formas();
+            TaskList();
+            //Formas();
             //StudentsIevadeIzvade(); 
+        }
+
+        static void TaskList()
+        {
+
+            string ievade = "";
+            List<String> saraksts = new List<string>();
+
+            while (ievade != "stop")
+            {
+                Console.WriteLine("Saraksta izveide, lai pārtrauktu izveidot sarakstu rakstiet STOP!");
+                ievade = Console.ReadLine();
+                ievade = ievade.ToLower();
+
+                saraksts.Add(ievade);
+                
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Sarakstā iekļautie String:");
+            saraksts.ForEach(Console.WriteLine);
+
+        }
+
+        static void List()
+        {
+            List<String> a = new List<string>();
+            a.Add("aa");
+            a.Add("bb");
+            a.RemoveAt(0);
+
+            for (int i = 0; i < a.Count; i++)
+            {
+
+            }
+
+            foreach (string b in a)
+            {
+                Console.WriteLine(b);
+            }
         }
 
         static void Formas()
