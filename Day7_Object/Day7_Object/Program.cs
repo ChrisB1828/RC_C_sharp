@@ -22,19 +22,62 @@ namespace Day7_Object
 
             if (izvele == "1")
             {
-                Shape tr = new Shape(10, 4, 8);
+                int mala1;
+                int mala2;
+                int mala3;
+
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala3 = Convert.ToInt32(Console.ReadLine());
+
+
+                Shape tr = new Shape(mala1, mala2, mala3);
                 tr.PrintTriangle();
                 tr.PerimetrTri();
             }
             else if (izvele == "2")
             {
-                Shape sq = new Shape(12, 12, 12, 12);
+                int mala1;
+                int mala2;
+                int mala3;
+                int mala4;
+
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala3 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala4= Convert.ToInt32(Console.ReadLine());
+
+                Shape sq = new Shape(mala1, mala2, mala3, mala4);
                 sq.PrintSquare();
                 sq.PerimetrSq();
             }
             else if (izvele == "3")
             {
-                Shape penta = new Shape(5, 8, 9, 3, 1);
+                int mala1;
+                int mala2;
+                int mala3;
+                int mala4;
+                int mala5;
+
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala3 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala4 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ievadiet pirmās malas garumu!");
+                mala5 = Convert.ToInt32(Console.ReadLine());
+
+                Shape penta = new Shape(mala1, mala2, mala3, mala4, mala5);
                 penta.PrintPentagone();
                 penta.PerimetrPenta();
             }
