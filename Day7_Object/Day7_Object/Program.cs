@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Day7_Object
 {
@@ -7,6 +8,26 @@ namespace Day7_Object
         static void Main(string[] args)
         {
             StudentsIevadeIzvade(); 
+        }
+
+        static void StudentsArrayList()
+        {
+            Students[] student = new Students[5];
+            student[0] = new Students("Kristaps", "Balodis", 3);
+
+            for (int i = 0; i < student.Length; i++)
+            {
+                student[i].print();
+            }
+
+            List<Students> st = new List<Students>();
+            st.Add(new Students("Kristaps", "Balodis", 3));
+
+            for (int i = 0; i < st.Count; i++)
+            {
+                st[i].print();
+            }
+
         }
 
         static void StudentsTest()
