@@ -34,6 +34,20 @@ namespace Day7_Object
             this.mala5 = mala5;
         }
 
+        public void Print() // optimālāks variants 
+        {
+            Console.Write(mala1 + "," + mala2 + "," + mala3);
+            if (mala4 > 0)
+            {
+                Console.Write("," + mala4);
+            }
+            if (mala5 > 0)
+            {
+                Console.Write("," + mala5);
+            }
+            Console.WriteLine();
+        }
+
         public void PrintTriangle()
         {
             Console.WriteLine("Malu garumi ir " + mala1 + ", " + mala2 + ", " + mala3);
@@ -45,6 +59,11 @@ namespace Day7_Object
         public void PrintPentagone()
         {
             Console.WriteLine("Malu garumi ir " + mala1 + ", " + mala2 + ", " + mala3 + ", " + mala4 + ", " + mala5);
+        }
+
+        public int Perimetr() // optimālāks variants
+        {         
+            return mala1 + mala2 + mala3 + mala4 + mala5;
         }
 
         public void PerimetrTri()
@@ -62,6 +81,7 @@ namespace Day7_Object
             int perimetr = mala1 + mala2 + mala3 + mala4 + mala5;
             Console.WriteLine("Perimetrs ir " + perimetr);
         }
+
 
     }
 }

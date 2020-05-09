@@ -38,8 +38,8 @@ namespace Day7_Object
 
 
                 Shape tr = new Shape(mala1, mala2, mala3);
-                tr.PrintTriangle();
-                tr.PerimetrTri();
+                tr.Print();
+                Console.WriteLine(tr.Perimetr());
             }
             else if (izvele == "2")
             {
@@ -53,8 +53,8 @@ namespace Day7_Object
                 mala4= Convert.ToInt32(Console.ReadLine());
 
                 Shape sq = new Shape(mala1, mala2, mala3, mala4);
-                sq.PrintSquare();
-                sq.PerimetrSq();
+                sq.Print();
+                Console.WriteLine(sq.Perimetr());
             }
             else if (izvele == "3")
             {
@@ -70,8 +70,8 @@ namespace Day7_Object
                 mala5 = Convert.ToInt32(Console.ReadLine());
 
                 Shape penta = new Shape(mala1, mala2, mala3, mala4, mala5);
-                penta.PrintPentagone();
-                penta.PerimetrPenta();
+                penta.Print();
+                Console.WriteLine(penta.Perimetr());
             }
 
         }
