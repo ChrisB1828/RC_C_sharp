@@ -9,9 +9,58 @@ namespace Day7_Object
     {
         static void Main(string[] args)
         {
-            TaskList();
+            Task4();
+            //TaskList();
             //Formas();
             //StudentsIevadeIzvade(); 
+        }
+
+        static void Task4()
+        {
+            Random random = new Random();
+            List<int> numbers = new List<int>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                numbers.Add(random.Next(100));
+            }
+
+            String choice = "";
+
+            while(choice != "3")
+            {
+                Console.WriteLine("1 - izvadīt sarakstu");
+                Console.WriteLine("2 - dzēst");
+                Console.WriteLine("3 - Iziet");
+
+                choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        foreach (int a in numbers)
+                        {
+                            Console.WriteLine(a);
+                        }
+                        break;
+                    case "2":
+                        Console.WriteLine("Kuru dzēst?");
+                        int toDelete = Convert.ToInt32(Console.ReadLine());
+                        numbers.Remove(toDelete);
+                        break;
+                    case "3":
+                        break;
+                    default:
+                        Console.WriteLine("Nepareiza ievade");
+                        break;
+                }
+            }
+
+        }
+        static int RandomNumber(int min = 1, int max = 101)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
         }
 
         static void TaskList()
@@ -31,15 +80,18 @@ namespace Day7_Object
                     Console.WriteLine();
 
                     Console.WriteLine("Sarakstā iekļautie String:");
-                    saraksts.ForEach(Console.WriteLine);
-                }
+                    saraksts.ForEach(Console.WriteLine); // šo var izmantot, ja nepieciešams tikai izgūt sarakstu
 
+                    //foreach (string b in saraksts)   šo var izmantot lai arī pārbaudītu saraksta elementus
+                    //{
+                    //    Console.WriteLine(b);
+                    //}
+
+                }
 
                 saraksts.Add(ievade);
                 
             }
-
-
         }
 
         static void List()
