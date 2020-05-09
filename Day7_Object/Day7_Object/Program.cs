@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
+using System.Threading;
 
 namespace Day7_Object
 {
@@ -7,7 +9,36 @@ namespace Day7_Object
     {
         static void Main(string[] args)
         {
-            StudentsIevadeIzvade(); 
+            Formas();
+            //StudentsIevadeIzvade(); 
+        }
+
+        static void Formas()
+        {
+            Console.WriteLine("Lai izvadītu trijstūra malu garumus un perimetru nospiediet - 1");
+            Console.WriteLine("Lai izvadītu četrstūra malu garumus un perimetru nospiediet - 2");
+            Console.WriteLine("Lai izvadītu piecstūra malu garumus un perimetru nospiediet - 3");
+            string izvele = Console.ReadLine();
+
+            if (izvele == "1")
+            {
+                Shape tr = new Shape(10, 4, 8);
+                tr.PrintTriangle();
+                tr.PerimetrTri();
+            }
+            else if (izvele == "2")
+            {
+                Shape sq = new Shape(12, 12, 12, 12);
+                sq.PrintSquare();
+                sq.PerimetrSq();
+            }
+            else if (izvele == "3")
+            {
+                Shape penta = new Shape(5, 8, 9, 3, 1);
+                penta.PrintPentagone();
+                penta.PerimetrPenta();
+            }
+
         }
 
         static void StudentsArrayList()

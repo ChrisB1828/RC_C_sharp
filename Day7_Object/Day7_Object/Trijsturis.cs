@@ -17,6 +17,12 @@ namespace Day7_Object
             this.mala3 = mala3;
         }
 
+        public Trijsturis(int mala1, int mala2)
+        {
+            this.mala1 = mala1;
+            this.mala2 = mala2;
+        }
+
         public void Pirnt()
         {
             Console.WriteLine(mala1 + " " + mala2 + " " + mala3);
