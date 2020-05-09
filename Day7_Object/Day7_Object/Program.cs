@@ -26,14 +26,19 @@ namespace Day7_Object
                 ievade = Console.ReadLine();
                 ievade = ievade.ToLower();
 
+                if (ievade == "stop")
+                {
+                    Console.WriteLine();
+
+                    Console.WriteLine("Sarakstā iekļautie String:");
+                    saraksts.ForEach(Console.WriteLine);
+                }
+
+
                 saraksts.Add(ievade);
                 
             }
 
-            Console.WriteLine();
-
-            Console.WriteLine("Sarakstā iekļautie String:");
-            saraksts.ForEach(Console.WriteLine);
 
         }
 
