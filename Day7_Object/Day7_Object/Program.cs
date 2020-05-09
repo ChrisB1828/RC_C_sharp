@@ -9,8 +9,29 @@ namespace Day7_Object
             StudentsIevadeIzvade(); 
         }
 
+        static void StudentsTest()
+        {
+            Console.WriteLine("Ievadiet vardu!");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Ievadiet uzvardu!");
+            string surname = Console.ReadLine();
+
+            int course;
+
+            Console.WriteLine("ievadiet kursu!");
+            try
+            {
+                course = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Nepareiza ievade");
+                return;
+            }
+        }
       
-        static void StudentsIevadeIzvade() // pieļauju, ka ir labāks veids kā izveidot divus objektus vienā klasē, izmantojot loop jau nevarēs atkārtoti izsaukt dažados izveidotos objektus? vai šeit būtu jāizmanto array?
+        static void StudentsIevadeIzvade() // pieļauju, ka ir labāks veids kā izveidot divus objektus, izmantojot loop jau nevarēs atkārtoti izsaukt dažados izveidotos objektus? vai šeit būtu jāizmanto array?
         {
 
             Console.WriteLine("Ievadiet vardu!");
