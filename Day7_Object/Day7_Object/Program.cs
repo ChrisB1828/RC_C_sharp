@@ -20,11 +20,14 @@ namespace Day7_Object
             Console.WriteLine("Lai izvadītu piecstūra malu garumus un perimetru nospiediet - 3");
             string izvele = Console.ReadLine();
 
+            int mala1;
+            int mala2;
+            int mala3;
+            int mala4;
+            int mala5;
+
             if (izvele == "1")
             {
-                int mala1;
-                int mala2;
-                int mala3;
 
                 Console.WriteLine("Ievadiet pirmās malas garumu!");
                 mala1 = Convert.ToInt32(Console.ReadLine());
@@ -40,11 +43,6 @@ namespace Day7_Object
             }
             else if (izvele == "2")
             {
-                int mala1;
-                int mala2;
-                int mala3;
-                int mala4;
-
                 Console.WriteLine("Ievadiet pirmās malas garumu!");
                 mala1 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Ievadiet pirmās malas garumu!");
@@ -60,12 +58,6 @@ namespace Day7_Object
             }
             else if (izvele == "3")
             {
-                int mala1;
-                int mala2;
-                int mala3;
-                int mala4;
-                int mala5;
-
                 Console.WriteLine("Ievadiet pirmās malas garumu!");
                 mala1 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Ievadiet pirmās malas garumu!");
