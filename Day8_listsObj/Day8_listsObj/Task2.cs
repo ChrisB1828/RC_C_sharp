@@ -1,29 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Xml.Serialization;
 
 namespace Day8_listsObj
 {
-    class StringList
+    class Task2
     {
+        
+
         private List<String> listOfValues;
 
-        public StringList()
+        public Task2()
         {
             listOfValues = new List<String>();
         }
 
-
-
-        public void Task1()
+        public void TaskTwo()
         {
-            //Mēs izvadam menu
-            //Mēs dodam iespēju izvēlēties
-            //1.izvadīt
-            //2.pievienot
-            //3.dzēst
-            //0. Iziet
 
             string choice = "";
 
@@ -32,6 +25,7 @@ namespace Day8_listsObj
                 Console.WriteLine("Lai izvadītu sarakstu nospiedd - 1");
                 Console.WriteLine("Lai pievienotu objektu sarakstam nospied - 2");
                 Console.WriteLine("Lai dzēstu objektu no saraksta nospied - 3");
+                Console.WriteLine("Lai izvadītu indeksu elementiem, kas satur meklējamo frāzi nospied - 4");
                 Console.WriteLine("Lai izietu no saraksta nospied - 0");
 
                 choice = Console.ReadLine();
@@ -47,6 +41,9 @@ namespace Day8_listsObj
                     case "3":
                         Delete();
                         break;
+                    case "4":
+                        Finder();
+                        break;
                     case "0":
                         Exit();
                         break;
@@ -60,7 +57,7 @@ namespace Day8_listsObj
 
         private void Print()
         {
-            //1. izvadīt
+            
             Console.WriteLine("-------------");
             if (listOfValues.Count == 0)
             {
@@ -75,7 +72,7 @@ namespace Day8_listsObj
 
         private void Add()
         {
-            //2.pievienot
+            
             Console.WriteLine("Ievadiet objektu:");
             listOfValues.Add(Console.ReadLine());
             Console.WriteLine("-------------");
@@ -84,7 +81,7 @@ namespace Day8_listsObj
 
         private void Delete()
         {
-            //3.dzēst
+            
             Console.WriteLine("Ievadiet objektu kuru vēlaties dzēst");
             string delete = Console.ReadLine();
             for (int i = 0; i < listOfValues.Count; i++)
@@ -101,11 +98,34 @@ namespace Day8_listsObj
 
         }
 
+        private void Finder()
+        {
+            Console.WriteLine("Ievadiet objektu kuru vēlaties atrasts:");
+            string find = Console.ReadLine().ToLower();
+
+            for (int i = 0; i < listOfValues.Count; i++)
+            {
+                String el = listOfValues[i].ToLower();
+
+                if (el.Contains(find))
+                {
+                    Console.WriteLine("-------------");
+                    Console.WriteLine("Index = " + i + ", Objekts = " + listOfValues[i]);
+                    Console.WriteLine("-------------");
+                }
+                else
+                {
+                    Console.WriteLine("-------------");
+                    Console.WriteLine("Šāds objekts sarakstā nav atrasts!");
+                    Console.WriteLine("-------------");
+                }
+            }
+            
+        }
+
         private void Exit()
         {
             Console.WriteLine("Paldies par uzmanību!");
         }
-
-
     }
 }
