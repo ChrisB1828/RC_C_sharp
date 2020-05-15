@@ -27,7 +27,7 @@ namespace Day10_Algorithms
 
             int tempNumberHolder = 0;
 
-            for (int i = 0; i < bubbleNumbers.Length-1; i++)
+            for (int i = 0; i < bubbleNumbers.Length; i++)
             {
                 for (int j = 0; j < bubbleNumbers.Length-i-1; j++)
                 {
