@@ -8,6 +8,7 @@ namespace Day10_Algorithms
         {
             Bubble bl = new Bubble();
             bl.BubbleNumber();
+            bl.EvenOdd();
         }
     }
 }
