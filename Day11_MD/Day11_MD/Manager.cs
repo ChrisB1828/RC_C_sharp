@@ -22,6 +22,7 @@ namespace Day11_MD
             Console.WriteLine("Age: " + age);
             Console.WriteLine("Monthly Salary: " + monthlySalary + " EUR");
             Console.WriteLine("Years of experience: " + yearsOfExperience);
+            Console.WriteLine("----------------------------------");
         }
     }
 }
