@@ -15,7 +15,7 @@ namespace Day11_MD
 
             List<Employee> lst = new List<Employee>();
 
-            Console.WriteLine("Please creat team of one Manager, two Programmer and one Database expert.");
+            Console.WriteLine("Please creat team of one Manager, two Programmers and one Database expert.");
             Console.WriteLine();
 
             Console.WriteLine("Please enter information about Manager:");
