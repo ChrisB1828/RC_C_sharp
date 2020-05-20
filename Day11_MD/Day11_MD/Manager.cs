@@ -16,7 +16,7 @@ namespace Day11_MD
             this.yearsOfExperience = yearsOfExperience;
         }
 
-        public void Print()
+        public void PrintM()
         {
             Console.WriteLine(name + " " + surname);
             Console.WriteLine("Age: " + age);

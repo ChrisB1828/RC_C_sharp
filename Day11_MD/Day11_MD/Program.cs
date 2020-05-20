@@ -29,21 +29,25 @@ namespace Day11_MD
             DproInput(lst);
 
 
-            foreach (Manager a in lst) // Vai ir iespējams no list izsaukt tikai atsevišķas klases?
-            {
-                a.Print();
+            foreach (Employee e in lst) //tikai daļēji saprotu aiz šī loģiku, vai varētu lūdzu detalizētāk izskaidrot. 
+            {                           //varbūt ir kāda labāka metode kā tikt klāt viena saraksta objektiem no dažādām klasēm.
+                if (e is Manager m)
+                {
+                    m.PrintM();
+                }
+                else
+                {
+                    if (e is Programmer p)
+                    {
+                        p.PrintPro();
+                    }
+                    else
+                    {
+                        DatabasePRO d = e as DatabasePRO;
+                        d.PrintDP();
+                    }
+                }
             }
-
-            foreach (Programmer a in lst)
-            {
-                a.Print();
-            }
-
-            foreach (DatabasePRO a in lst)
-            {
-                a.Print();
-            }
-
         }
 
         static void MaInput(List<Employee> lst)

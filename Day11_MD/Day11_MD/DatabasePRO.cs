@@ -18,7 +18,7 @@ namespace Day11_MD
         }
 
 
-        public void Print()
+        public void PrintDP()
         {
             Console.WriteLine(name + " " + surname);
             Console.WriteLine("Age: " + age);

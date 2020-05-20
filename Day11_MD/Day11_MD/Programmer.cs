@@ -16,7 +16,7 @@ namespace Day11_MD
             this.monthlySalary = monthlySalary;
             this.language = language;
         }
-        public void Print()
+        public void PrintPro()
         {
             Console.WriteLine(name + " " + surname);
             Console.WriteLine("Age: " + age);
