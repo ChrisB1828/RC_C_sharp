@@ -7,24 +7,18 @@ namespace Day12
     abstract class Animal
     {
 
-        public bool wings = true;
+        public bool wings;
         public int legCount;
 
         public abstract void MakeSound();
-        public abstract void Move(); // overraide move pie katra
+        public abstract void Move();
         
-        public void Sleep() // taisam abstract
+        public void Sleep()
         {
-            Console.WriteLine("Sleep");
+            Console.WriteLine("All winged animals sleeps");
         }
 
-        public void NoWingsMove()
-        {
-            if (wings == true)
-            {
-                Move();
-            }
-        }
+        public abstract void Print();
 
     }
 }

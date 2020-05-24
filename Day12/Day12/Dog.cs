@@ -6,19 +6,34 @@ namespace Day12
 {
     class Dog : Animal
     {
+        int siblings = 5;
 
-        public int Legcount()
+        public Dog(bool wings = false, int legCount = 4)
         {
-            return legCount = 4;
+            this.wings = wings;
+            this.legCount = legCount;
         }
-        public bool Wings()
+
+        public override void Move()
         {
-            return wings = false;
+            Console.WriteLine("Dog moves!");
         }
 
         public override void MakeSound()
         {
             Console.WriteLine("Vau Vau!");
+        }
+        public new void Sleep()
+        {
+            Console.WriteLine("Dog sleeps");
+        }
+        public override void Print()
+        {
+            Console.WriteLine($"Dog has {siblings} siblings!");
+            Console.WriteLine($"Dog has {legCount} legs!");
+            Move();
+            MakeSound();
+            Sleep();
         }
     }
 }

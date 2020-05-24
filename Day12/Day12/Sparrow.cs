@@ -7,17 +7,27 @@ namespace Day12
     class Sparrow : Animal
     {
 
-        public int Legcount()
+        public Sparrow(bool wings = true, int legCount = 2)
         {
-            return legCount = 2;
+            this.wings = wings;
+            this.legCount = legCount;
         }
-        public bool Wings()
+
+        public override void Move()
         {
-            return wings = true;
+            Console.WriteLine("Sparrow flies!");
         }
+
         public override void MakeSound()
         {
             Console.WriteLine("Chiv Chiv!"); 
+        }
+        public override void Print()
+        {
+            Console.WriteLine($"Sparrow has {legCount} legs!");
+            Move();
+            MakeSound();
+            Sleep();
         }
     }
 }

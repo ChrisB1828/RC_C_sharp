@@ -6,18 +6,30 @@ namespace Day12
 {
     class Parrot : Animal
     {
-        public int Legcount()
+        bool biggestBird = false;
+        public Parrot(bool wings = true, int legCount = 2)
         {
-            return legCount = 2;
+            this.wings = wings;
+            this.legCount = legCount;
         }
 
-        public bool Wings()
+        public override void Move()
         {
-            return wings = true;
+            Console.WriteLine("Parrot flies!");
         }
+
         public override void MakeSound()
         {
             Console.WriteLine("Parrrrrrrooootttt!");
+        }
+
+        public override void Print()
+        {
+            Console.WriteLine($"Statement that parrots are the biggest birds in the world is {biggestBird}");
+            Console.WriteLine($"Parrot has {legCount} legs!");
+            Move();
+            MakeSound();
+            Sleep();
         }
     }
 }
