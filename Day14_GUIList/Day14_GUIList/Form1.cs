@@ -39,11 +39,6 @@ namespace Day14_GUIList
             }
         }
 
-        private void FieldInput_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void BtnChange_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in LstTest.SelectedItems)

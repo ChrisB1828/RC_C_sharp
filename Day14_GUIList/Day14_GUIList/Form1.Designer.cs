@@ -81,7 +81,6 @@
             this.FieldInput.Name = "FieldInput";
             this.FieldInput.Size = new System.Drawing.Size(100, 20);
             this.FieldInput.TabIndex = 5;
-            this.FieldInput.TextChanged += new System.EventHandler(this.FieldInput_TextChanged);
             // 
             // Form1
             // 
