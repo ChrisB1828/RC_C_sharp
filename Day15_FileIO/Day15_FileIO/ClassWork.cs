@@ -121,19 +121,13 @@ namespace Day15_FileIO
             }
         }
 
-        public static void SaveAs()
+        public static void SaveAs() //japievieno failu nosaukumu parbaude
         {
             try
             {
                 Console.WriteLine("Ievadiet jauna faila nosaukumu:");
                 string fileName = Console.ReadLine();
 
-                if (@"D:\Riga Coding School\Day15_FileIO".Contains(@$"D:\Riga Coding School\Day15_FileIO\{fileName}.txt"))
-                {
-                    Console.WriteLine("Fails nosaukums jau eksiste!");
-                }
-                else
-                {
                     StreamWriter sw = new StreamWriter(@$"D:\Riga Coding School\Day15_FileIO\{fileName}.txt");
                     Console.WriteLine("---------------------------");
                     Console.WriteLine("Faila esosa informacija:");
@@ -141,8 +135,6 @@ namespace Day15_FileIO
                     Console.WriteLine("---------------------------");
                     Editing(fileName);
                     Console.WriteLine("---------------------------");
-                }
-                
 
             }
             catch (Exception)

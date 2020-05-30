@@ -6,6 +6,11 @@ namespace Day15_FileIO
     {
         static void Main(string[] args)
         {
+            ClassWork2.Izpilde();
+        }
+
+        static void KlasesDarbs_1()
+        {
             Console.WriteLine("Izveidot jaunu .txt failu - nospied 1 vai rediget esosu failiu nospied - 2:");
             int izvele = Convert.ToInt32(Console.ReadLine());
             switch (izvele)
