@@ -33,6 +33,7 @@
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnChange = new System.Windows.Forms.Button();
             this.FieldInput = new System.Windows.Forms.TextBox();
+            this.BtnUndo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LstTest
@@ -82,11 +83,22 @@
             this.FieldInput.Size = new System.Drawing.Size(100, 20);
             this.FieldInput.TabIndex = 5;
             // 
+            // BtnUndo
+            // 
+            this.BtnUndo.Location = new System.Drawing.Point(250, 197);
+            this.BtnUndo.Name = "BtnUndo";
+            this.BtnUndo.Size = new System.Drawing.Size(75, 23);
+            this.BtnUndo.TabIndex = 6;
+            this.BtnUndo.Text = "Undo";
+            this.BtnUndo.UseVisualStyleBackColor = true;
+            this.BtnUndo.Click += new System.EventHandler(this.BtnUndo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnUndo);
             this.Controls.Add(this.FieldInput);
             this.Controls.Add(this.BtnChange);
             this.Controls.Add(this.BtnDelete);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Button BtnChange;
         private System.Windows.Forms.TextBox FieldInput;
+        private System.Windows.Forms.Button BtnUndo;
     }
 }
 
