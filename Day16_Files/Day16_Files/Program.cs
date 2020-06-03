@@ -79,7 +79,7 @@ namespace Day16_Files
    
                         break;
                     case "3":
-                        
+                        DeleteFromFile(listOfStudents);
                         break;
                     case "0":
                         break;
@@ -98,10 +98,11 @@ namespace Day16_Files
             sw.Close();
         }
 
-        public static void DeleteFromFile()
-        {
-            Console.WriteLine("Ievadiet indeksu studentam kuru velaties dzest no saraksta");
-
+        public static void DeleteFromFile(List<Student> lst)
+        { 
+            
+            
+            
         }
         public static void Read(List<Student> lst)
         {
