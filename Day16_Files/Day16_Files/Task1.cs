@@ -13,8 +13,6 @@ namespace Day16_Files
             String studentInfo = "Juris,Abolins,3";
             String[] words = studentInfo.Split(',');
 
-            //sadalīt pa vērtībam un un tand 
-            //pievienot sarakstam;
             string name = words[0];
             string surname = words[1];
             int course = Convert.ToInt32(words[2]);
