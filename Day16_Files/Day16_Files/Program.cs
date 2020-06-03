@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace Day16_Files
 {
@@ -7,7 +9,8 @@ namespace Day16_Files
     {
         static void Main(string[] args)
         {
-            Task1.Run();
+            //Task1.Run();
+            TaskPecTam();
         }
         static void TaskPecTam()
         {
@@ -17,7 +20,7 @@ namespace Day16_Files
 
             Student lst = new Student(name, surname, course);
             List<Student> listOfStudents = new List<Student>();
-
+            List<string> listOfStudentString = new List<string>();
 
             int i = 1;
 
@@ -31,10 +34,25 @@ namespace Day16_Files
                 switch (ievade)
                 {
                     case "1":
-                        foreach (Student st in listOfStudents)
+                       // bool isEmpty = !listOfStudents.Any();
+                        if (!listOfStudents.Any())
                         {
-                            st.print();
+                            Read(listOfStudents);
+                            foreach (var st in listOfStudents)
+                            {
+                                st.print();
+                                Console.WriteLine("-----------------------");
+                            }
                         }
+                        else
+                        {
+                            foreach (var st in listOfStudents)
+                            {
+                                st.print();
+                                Console.WriteLine("-----------------------");
+                            }
+                        }
+                        
                         break;
                     case "2":
                         Console.WriteLine("Ievadiet studenta vārdu:");
@@ -44,9 +62,21 @@ namespace Day16_Files
                         surname = Console.ReadLine();
 
                         Console.WriteLine("Ievadiet studenta kursu:");
-                        course = Convert.ToInt32(Console.ReadLine());
-
-                        listOfStudents.Add(new Student(name, surname, course));
+                        string coursString = Console.ReadLine();
+                        try
+                        {
+                            course = Convert.ToInt32(coursString);
+                            listOfStudents.Add(new Student(name, surname, course));
+                            string combined = $"{name},{surname},{coursString}";
+                            listOfStudentString.Add(combined);
+                            Write(listOfStudentString);
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("Nav ievadits skaitlis");
+                            TaskPecTam();
+                        }
+   
                         break;
 
                     case "0":
@@ -54,6 +84,42 @@ namespace Day16_Files
                     default:
                         break;
                 }
+            }
+        }
+        public static void Write(List<String> studentList)
+        {
+            StreamWriter sw = new StreamWriter($@"D:\Riga Coding School\RC_C_sharp\Day16_Files\Faili\Student_List.text", true);
+            foreach (string student in studentList)
+            {
+                sw.WriteLine(student);
+            }
+            sw.Close();
+        }
+        public static void Read(List<Student> lst)
+        {
+            String line;
+            try
+            {
+                StreamReader sr = new StreamReader($@"D:\Riga Coding School\RC_C_sharp\Day16_Files\Faili\Student_List.text");
+                line = sr.ReadLine();
+
+                while(line != null)
+                {
+                    string[] split = line.Split(",");
+                    string name = split[0];
+                    string surname = split[1];
+                    int course = Convert.ToInt32(split[2]);
+
+                    Student student = new Student(name, surname, course);
+
+                    lst.Add(student);
+                    line = sr.ReadLine();
+                }
+                sr.Close();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Nav atrasts fails!");
             }
         }
     }
