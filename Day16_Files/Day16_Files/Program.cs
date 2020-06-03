@@ -78,7 +78,9 @@ namespace Day16_Files
                         }
    
                         break;
-
+                    case "3":
+                        
+                        break;
                     case "0":
                         break;
                     default:
@@ -88,19 +90,25 @@ namespace Day16_Files
         }
         public static void Write(List<String> studentList)
         {
-            StreamWriter sw = new StreamWriter($@"D:\Riga Coding School\RC_C_sharp\Day16_Files\Faili\Student_List.text", true);
+            StreamWriter sw = new StreamWriter(@"D:\Riga Coding School\RC_C_sharp\Day16_Files\Faili\Student_List.text", true);
             foreach (string student in studentList)
             {
                 sw.WriteLine(student);
             }
             sw.Close();
         }
+
+        public static void DeleteFromFile()
+        {
+            Console.WriteLine("Ievadiet indeksu studentam kuru velaties dzest no saraksta");
+
+        }
         public static void Read(List<Student> lst)
         {
             String line;
             try
             {
-                StreamReader sr = new StreamReader($@"D:\Riga Coding School\RC_C_sharp\Day16_Files\Faili\Student_List.text");
+                StreamReader sr = new StreamReader(@"D:\Riga Coding School\RC_C_sharp\Day16_Files\Faili\Student_List.text");
                 line = sr.ReadLine();
 
                 while(line != null)
