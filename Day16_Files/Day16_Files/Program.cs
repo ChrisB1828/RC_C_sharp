@@ -114,7 +114,7 @@ namespace Day16_Files
 
                 while(line != null)
                 {
-                    string[] split = line.Split(",");
+                    string[] split = line.Split(','); //','
                     string name = split[0];
                     string surname = split[1];
                     int course = Convert.ToInt32(split[2]);
