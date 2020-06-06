@@ -1,0 +1,17 @@
+[
+  {
+    "brand": "Volvo",
+    "model": "V40 CC",
+    "doorCount": 5
+  },
+  {
+    "brand": "Volvo",
+    "model": "XC40",
+    "doorCount": 5
+  },
+  {
+    "brand": "Volvo",
+    "model": "XC90",
+    "doorCount": 5
+  }
+]
