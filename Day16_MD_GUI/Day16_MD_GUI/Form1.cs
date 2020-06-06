@@ -15,6 +15,7 @@ namespace Day16_MD_GUI
     {
         private List<Student> listOfStudents = new List<Student>();
         private List<string> listOfStudentsString = new List<string>();
+        private List<string> tempList = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -44,14 +45,22 @@ namespace Day16_MD_GUI
                 LstStudent.Items.Add($"{name} {surname} {course}");
                 String combined = $"{name},{surname},{course}";
                 listOfStudentsString.Add(combined);
-                Write(listOfStudentsString);
             }
+            ListUpdate();
         }
-
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in LstStudent.SelectedItems)
+            {
+                LstStudent.Items.Remove(item);
+            }
+            ListUpdate();
+        }
         private void BtnReadFile_Click(object sender, EventArgs e)
         {
             LstStudent.Items.Clear();
-            LstStudent.Refresh();
+            listOfStudents.Clear();
+            
             ReadFile(listOfStudents);
             foreach (var student in listOfStudents)
             {
@@ -63,16 +72,43 @@ namespace Day16_MD_GUI
             }
             
         }
-        static void Write(List<String> listOfStudentsString)
+        private void ListUpdate()
+        {     
+            listOfStudents.Clear();
+            listOfStudentsString.Clear();
+
+            
+            foreach (ListViewItem item in LstStudent.Items)
+            {
+                tempList.Add(item.Text);
+            }
+            
+            foreach (string element in tempList)
+            {
+                string student = element;
+                string[] split = student.Split(' ');
+                string name = split[0];
+                string surname = split[1];
+                string cours = split[2];
+                int coursInt = Convert.ToInt32(cours);
+
+                listOfStudents.Add(new Student(name, surname, coursInt));
+
+                string combined = $"{name},{surname},{cours}";
+                listOfStudentsString.Add(combined);
+            }
+            Write(listOfStudentsString);
+            tempList.Clear();
+        }
+        static void Write(List<String> listOfStudentsString, bool tOrF = false)
         {
-            StreamWriter sw = new StreamWriter(@"D:\Riga Coding School\RC_C_sharp\Day16_Files\Faili\Student_List.text", true);
+            StreamWriter sw = new StreamWriter(@"D:\Riga Coding School\RC_C_sharp\Day16_Files\Faili\Student_List.text", tOrF);
             foreach (string student in listOfStudentsString)
             {
                 sw.WriteLine(student);
             }
             sw.Close();
         }
-
         static void ReadFile(List<Student> listOfStudents)
         {
             String line;
@@ -99,6 +135,15 @@ namespace Day16_MD_GUI
             {
                 Console.WriteLine("Nav atrasts fails!");
             }
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            string name = EditName.Text;
+            string surname = EditSurname.Text;
+            string cours = EditCours.Text;
+            LstStudent.SelectedItems[0].Text = $"{name} {surname} {cours}";
+            ListUpdate();
         }
     }
 }

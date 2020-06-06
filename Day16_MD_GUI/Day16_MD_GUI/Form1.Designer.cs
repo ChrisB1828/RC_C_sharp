@@ -30,13 +30,18 @@
         {
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
-            this.BtnTextXhange = new System.Windows.Forms.Button();
-            this.TxtChange = new System.Windows.Forms.TextBox();
+            this.BtnEdit = new System.Windows.Forms.Button();
+            this.EditName = new System.Windows.Forms.TextBox();
             this.BtnReadFile = new System.Windows.Forms.Button();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.TxtSurname = new System.Windows.Forms.TextBox();
             this.TxtCours = new System.Windows.Forms.TextBox();
             this.LstStudent = new System.Windows.Forms.ListView();
+            this.LblName = new System.Windows.Forms.Label();
+            this.LblSurname = new System.Windows.Forms.Label();
+            this.LblCours = new System.Windows.Forms.Label();
+            this.EditSurname = new System.Windows.Forms.TextBox();
+            this.EditCours = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // BtnAdd
@@ -57,22 +62,24 @@
             this.BtnDelete.TabIndex = 2;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
-            // BtnTextXhange
+            // BtnEdit
             // 
-            this.BtnTextXhange.Location = new System.Drawing.Point(197, 122);
-            this.BtnTextXhange.Name = "BtnTextXhange";
-            this.BtnTextXhange.Size = new System.Drawing.Size(101, 23);
-            this.BtnTextXhange.TabIndex = 3;
-            this.BtnTextXhange.Text = "Text Change";
-            this.BtnTextXhange.UseVisualStyleBackColor = true;
+            this.BtnEdit.Location = new System.Drawing.Point(197, 122);
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(101, 23);
+            this.BtnEdit.TabIndex = 3;
+            this.BtnEdit.Text = "Edit";
+            this.BtnEdit.UseVisualStyleBackColor = true;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
-            // TxtChange
+            // EditName
             // 
-            this.TxtChange.Location = new System.Drawing.Point(304, 122);
-            this.TxtChange.Name = "TxtChange";
-            this.TxtChange.Size = new System.Drawing.Size(100, 20);
-            this.TxtChange.TabIndex = 4;
+            this.EditName.Location = new System.Drawing.Point(304, 122);
+            this.EditName.Name = "EditName";
+            this.EditName.Size = new System.Drawing.Size(100, 20);
+            this.EditName.TabIndex = 4;
             // 
             // BtnReadFile
             // 
@@ -115,18 +122,64 @@
             this.LstStudent.UseCompatibleStateImageBehavior = false;
             this.LstStudent.View = System.Windows.Forms.View.List;
             // 
+            // LblName
+            // 
+            this.LblName.AutoSize = true;
+            this.LblName.Location = new System.Drawing.Point(334, 44);
+            this.LblName.Name = "LblName";
+            this.LblName.Size = new System.Drawing.Size(35, 13);
+            this.LblName.TabIndex = 10;
+            this.LblName.Text = "Name";
+            // 
+            // LblSurname
+            // 
+            this.LblSurname.AutoSize = true;
+            this.LblSurname.Location = new System.Drawing.Point(442, 44);
+            this.LblSurname.Name = "LblSurname";
+            this.LblSurname.Size = new System.Drawing.Size(49, 13);
+            this.LblSurname.TabIndex = 11;
+            this.LblSurname.Text = "Surname";
+            // 
+            // LblCours
+            // 
+            this.LblCours.AutoSize = true;
+            this.LblCours.Location = new System.Drawing.Point(548, 44);
+            this.LblCours.Name = "LblCours";
+            this.LblCours.Size = new System.Drawing.Size(34, 13);
+            this.LblCours.TabIndex = 12;
+            this.LblCours.Text = "Cours";
+            // 
+            // EditSurname
+            // 
+            this.EditSurname.Location = new System.Drawing.Point(410, 122);
+            this.EditSurname.Name = "EditSurname";
+            this.EditSurname.Size = new System.Drawing.Size(100, 20);
+            this.EditSurname.TabIndex = 13;
+            // 
+            // EditCours
+            // 
+            this.EditCours.Location = new System.Drawing.Point(516, 122);
+            this.EditCours.Name = "EditCours";
+            this.EditCours.Size = new System.Drawing.Size(100, 20);
+            this.EditCours.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.EditCours);
+            this.Controls.Add(this.EditSurname);
+            this.Controls.Add(this.LblCours);
+            this.Controls.Add(this.LblSurname);
+            this.Controls.Add(this.LblName);
             this.Controls.Add(this.LstStudent);
             this.Controls.Add(this.TxtCours);
             this.Controls.Add(this.TxtSurname);
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.BtnReadFile);
-            this.Controls.Add(this.TxtChange);
-            this.Controls.Add(this.BtnTextXhange);
+            this.Controls.Add(this.EditName);
+            this.Controls.Add(this.BtnEdit);
             this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.BtnAdd);
             this.Name = "Form1";
@@ -139,13 +192,18 @@
         #endregion
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Button BtnDelete;
-        private System.Windows.Forms.Button BtnTextXhange;
-        private System.Windows.Forms.TextBox TxtChange;
+        private System.Windows.Forms.Button BtnEdit;
+        private System.Windows.Forms.TextBox EditName;
         private System.Windows.Forms.Button BtnReadFile;
         private System.Windows.Forms.TextBox TxtName;
         private System.Windows.Forms.TextBox TxtSurname;
         private System.Windows.Forms.TextBox TxtCours;
         private System.Windows.Forms.ListView LstStudent;
+        private System.Windows.Forms.Label LblName;
+        private System.Windows.Forms.Label LblSurname;
+        private System.Windows.Forms.Label LblCours;
+        private System.Windows.Forms.TextBox EditSurname;
+        private System.Windows.Forms.TextBox EditCours;
     }
 }
 
