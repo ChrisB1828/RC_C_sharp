@@ -19,6 +19,7 @@ namespace Day17_JSON
         {
             Console.WriteLine("Ja velies izdrukat studenta sarakstu tad spied - 1");
             Console.WriteLine("Ja velies pievienot studentus sarakstam spied - 2");
+            Console.WriteLine("Ja velies beigt spied - 3");
 
             int izvele = Convert.ToInt32(Console.ReadLine());
 
@@ -28,19 +29,30 @@ namespace Day17_JSON
                     try
                     {
                         ReadAndPrint();
+                        Menu();
                     }
                     catch (Exception)
                     {
                         Console.WriteLine("Neizdevas nolasit failu!");
+                        Menu();
                     }
                     break;
                 case 2:
                     List<Student> listOfStudents = new List<Student>();
+
                     AddStudent(listOfStudents);
+
                     String json = JsonConvert.SerializeObject(listOfStudents, Formatting.Indented);
                     //Console.WriteLine(json);
+                    
                     Write(json);
                     ReadAndPrint();
+
+                    Console.WriteLine("--------------------");
+
+                    Menu();
+                    break;
+                case 3:
                     break;
                 default:
                     break;
@@ -48,9 +60,15 @@ namespace Day17_JSON
         }
         public static void AddStudent(List<Student> listOfStudents)
         {
-            listOfStudents.Add(new Student("Kristaps", "Balodis", 3));
-            listOfStudents.Add(new Student("Artis", "Abols", 3));
-            listOfStudents.Add(new Student("Peteris", "Petersons", 3));
+            
+            Console.WriteLine("Ievadiet studenta vardu!");
+            String name = Console.ReadLine();
+            Console.WriteLine("Ievadiet studenta uzvardu!");
+            String surname = Console.ReadLine();
+            Console.WriteLine("Ievadiet studenta kursu!");
+            int cours = Convert.ToInt32(Console.ReadLine());
+
+            listOfStudents.Add(new Student(name, surname, cours));
         }
 
         public static void ReadAndPrint()
