@@ -9,6 +9,8 @@ namespace Day21_SQL
             DBConnection con = new DBConnection();
             con.Connect();
             con.GetEmployees();
+
+            
         }
     }
 }

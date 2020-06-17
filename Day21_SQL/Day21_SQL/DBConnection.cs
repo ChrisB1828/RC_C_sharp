@@ -26,7 +26,7 @@ namespace Day21_SQL
             port = "3306";
             sslM = "none";
 
-            connectionString = String.Format("server={0};port={1};user id={2};password={3};database={4};SslMode{5}", server, port, user, password, database, sslM);
+            connectionString = String.Format("server={0};port={1};user id={2};password={3};database={4};SslMode={5}", server, port, user, password, database, sslM);
 
             connection = new MySqlConnection(connectionString);
         }
@@ -61,6 +61,11 @@ namespace Day21_SQL
             {
                 Console.WriteLine(row.Field<String>(0) + " " + row.Field<String>(1));
             }
+        }
+
+        public void SetEmployees(String _name, String _lastName, String _depId, int _salary, int _jobId)
+        {
+            string ins = $"INSERT INTO employees(employeeName, employeeLastName, departmentId, jobId, jsalary) VALUES ({_name}, {_lastName}, {_depId}, {_jobId}, {_salary})"; 
         }
     }
 }
