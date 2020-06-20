@@ -12,9 +12,18 @@ namespace Day22_MySql
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void BtnShowEmployees_Click(object sender, EventArgs e)
+        {
+            
+           
+            DBConnection con = new DBConnection();
+            con.GetEmployees();
         }
     }
 }
