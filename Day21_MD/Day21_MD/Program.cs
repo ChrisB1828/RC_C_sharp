@@ -104,28 +104,29 @@ namespace Day21_MD
                         University student = new University(name, lastName, cours);
 
                         con.AddStudent(student);
+
+                        Console.WriteLine("----------------------------");
+                        Console.WriteLine();
                     }
                     catch (Exception)
                     {
-
                         Console.WriteLine("Please enter student cours with numbers");
                         AddStudent(con);
-                    }
-
-                    
+                        return;
+                    }   
                 }
                 else
                 {
                     AddStudent(con);
+                    return;
                 }  
             }
             else
             {
                 AddStudent(con);
+                return;
             }
 
-            Console.WriteLine("----------------------------");
-            Console.WriteLine();
         }
 
         public static void DeleteStudent(DBConnection con)
